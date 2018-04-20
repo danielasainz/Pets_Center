@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
 
 </head>
@@ -32,7 +33,6 @@
     <input type="hidden" th:field="*{id}">
     <td>Pet image (insert an image URL here): </td>
         <td><input type="url" th:field="*{image}"></td>
-        <!-- <td th:if="${#fields.isEmpty('image')}" -->
     </tr>
     <tr>
         <td>If pet has been found, check this box:</td>

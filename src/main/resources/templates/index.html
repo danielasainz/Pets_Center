@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Title</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
 
 </head>
@@ -11,8 +13,40 @@
 <a href="/add"> Add a Pet </a>
 
 <div th:each="eachPet:${center}">
+    <div class="row">
+        <div class="col-4"></div>
 
- <img th:src="${eachPet.image}"/>
+        <div class="col-4">
+
+            <img th:src="${eachPet.image}">
+
+        </div>
+
+        <div class="petdetails col-4">
+
+            <p th:text="${eachPet.animalType}"></p>
+            <p th:text="${eachPet.name}"></p>
+            <p th:text="${eachPet.description}"></p>
+            <p th:text="${eachPet.available}? 'This pet has been found':'This pet has been lost'"></p>
+
+        </div>
+    </div>
+    <div class= "row offset-4">
+        <a th:text="${eachPet.available}? 'Report lost':'Report found'" th:href="@{/changestatus/{id}(id=${eachPet.id})}"></a>
+        <span><a th:href="@{/update/{id}(id=${eachPet.id})}">Update</a></span>
+        <span><a th:href="@{/delete/{id}(id=${eachPet.id})}">Delete</a></span>
+
+    </div>
+</div>
+</div>
+</body>
+</html>
+
+
+<!--
+<div th:each="eachPet:${center}">
+
+    <img th:src="${eachPet.image}">
 
     <a th:text="${eachPet.available}? 'Report lost':'Report found'" th:href="@{/changestatus/{id}(id=${eachPet.id})}"></a>
     <span><a th:href="@{/update/{id}(id=${eachPet.id})}">Update</a></span>
@@ -21,9 +55,6 @@
     <p th:text="${eachPet.animalType}"></p>
     <p th:text="${eachPet.name}"></p>
     <p th:text="${eachPet.description}"></p>
-    <p th:text="${eachPet.available}? 'This pet has been found':'This pet has been lost'"></p>
+    <p th:text="${eachPet.available}? 'This pet has been found':'This pet has been lost'"></p> -->
 
-</div>
-</body>
-</html>
 

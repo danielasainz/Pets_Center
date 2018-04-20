@@ -72,6 +72,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.validation.Valid;
 
+import static org.apache.logging.log4j.ThreadContext.isEmpty;
+
 @Controller
 
 public class HomeController {
@@ -97,7 +99,15 @@ public class HomeController {
         if (result.hasErrors()) {
             return "addPet";
         }
-        
+
+        /*
+
+        can't figure out this code below:
+        if ("${eachPet.image.equals("")}) {
+        return "/image/puppy.jpg";
+        }
+        */
+
         petRepo.save(toSave);
         return "redirect:/";
     }

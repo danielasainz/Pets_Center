@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<a href="/add"> Add a Pet </a>
+
+<div th:each="eachPet:${center}">
+
+ <img th:src="${eachPet.image}"/>
+
+    <a th:text="${eachPet.available}? 'Report lost':'Report found'" th:href="@{/changestatus/{id}(id=${eachPet.id})}"></a>
+    <span><a th:href="@{/update/{id}(id=${eachPet.id})}">Update</a></span>
+    <span><a th:href="@{/delete/{id}(id=${eachPet.id})}">Delete</a></span>
+
+    <p th:text="${eachPet.animalType}"></p>
+    <p th:text="${eachPet.name}"></p>
+    <p th:text="${eachPet.description}"></p>
+    <p th:text="${eachPet.available}? 'This pet has been found':'This pet has been lost'"></p>
+
+</div>
+</body>
+</html>
+

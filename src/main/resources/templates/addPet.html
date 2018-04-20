@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+<form action="/savepet" th:object="${aPet}" method="post">
+<table>
+    <tr>
+    <input type="hidden" th:field="*{id}">
+        <td>Type of animal this pet is: </td>
+        <td><input type="text" th:field="*{animalType}"></td>
+    <td th:if="${#fields.hasErrors('animalType')}" th:errors="*{animalType}">Must enter this information </td>
+    </tr>
+    <tr>
+        <input type="hidden" th:field="*{id}">
+        <td>Name of this pet:</td>
+        <td><input type="text" th:field="*{name}"></td>
+        <td th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Must enter this information </td>
+    </tr>
+    <tr>
+        <input type="hidden" th:field="*{id}">
+        <td>Description of this pet: </td>
+        <td><input type="text" th:field="*{description}"></td>
+        <td th:if="${#fields.hasErrors('description')}" th:errors="*{description}">Must enter this information </td>
+    </tr>
+    <tr>
+    <input type="hidden" th:field="*{id}">
+    <td>Pet image (insert an image URL here): </td>
+        <td><input type="url" th:field="*{image}"></td>
+        <!--<td th:if="${#fields.hasErrors('image')}" th:errors="*{image}">Must enter this information </td> -->
+    </tr>
+    <tr>
+        <td>If pet has been found, check this box:</td>
+        <td><input type="checkbox" th:field="*{available}" th:check="*{available}"><td>
+    </tr>
+    <tr>
+        <td><button type="submit">Add a Pet </button></td>
+    </tr>
+
+
+</table>
+</form>
+
+
+<!--
+</body>
+</html>
+
+
+<html>
+<body>
+<form action="#" th:action="@{/}" th:object="${personForm}" method="post">
+    <table>
+        <tr>
+            <td>Name:</td>
+            <td><input type="text" th:field="*{name}" /></td>
+            <td th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</td>
+        </tr>
+        <tr>
+            <td>Age:</td>
+            <td><input type="text" th:field="*{age}" /></td>
+            <td th:if="${#fields.hasErrors('age')}" th:errors="*{age}">Age Error</td>
+        </tr>
+        <tr>
+            <td><button type="submit">Submit</button></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
+*/
+-->

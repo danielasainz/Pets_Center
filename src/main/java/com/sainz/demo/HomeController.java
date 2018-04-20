@@ -97,6 +97,7 @@ public class HomeController {
         if (result.hasErrors()) {
             return "addPet";
         }
+        
         petRepo.save(toSave);
         return "redirect:/";
     }

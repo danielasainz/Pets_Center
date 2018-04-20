@@ -4,7 +4,19 @@ h1{
     color: blue;
 }
 
-image {
-    height: 200px;
+img {
+    height:200px;
+    padding-top:20px;
+    padding-bottom:20px;
+    display: block;
+    margin:0;
+    padding-left: 50px;
+}
+
+div {
+    margin-bottom: 10px;
+}
+td {
+    display: inline-block;
 }
 

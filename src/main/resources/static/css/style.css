@@ -4,15 +4,6 @@ h1{
     color: blue;
 }
 
-img {
-    height:200px;
-    padding-top:20px;
-    padding-bottom:20px;
-    display: block;
-    margin:0;
-    padding-left: 50px;
-}
-
 div {
     margin-bottom: 10px;
 }
@@ -42,8 +33,8 @@ p {
 
 a {
     text-align: left;
+    padding-left: 50px;
     margin:0 !important;
-    padding-left:50px;
     color:blue;
     font-size:20px;
     font-family: "Times New Roman", Times, serif;
@@ -51,4 +42,8 @@ a {
 
 .petdetails{
     padding-top:40px;
+}
+
+body {
+background-image:url("https://wallpapercave.com/wp/AWzDV5B.jpg");
 }

@@ -39,13 +39,9 @@ public class HomeController {
             return "addPet";
         }
 
-        /*
-
-        can't figure out this code below:
-        if ("${eachPet.image.equals("")}) {
-        return "/image/puppy.jpg";
+        if (toSave.getImage().isEmpty()) {
+            toSave.setImage("url for default image");
         }
-        */
 
         petRepo.save(toSave);
         return "redirect:/";
